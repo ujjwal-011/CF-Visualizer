@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CF-Visualizer</title>
+
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+  <!-- <link rel="stylesheet" href="css\stylesIndex.css"> -->
+  <link href="css\stylesindex.css" rel="stylesheet">
+
+  <!-- Animation Files  -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Pacifico&family=Ubuntu&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Fonts Awesome Path -->
+  <script src="https://kit.fontawesome.com/6ff6c73007.js" crossorigin="anonymous"></script>
+
+  <!-- Bootstrap Scripts -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+  
+
+  <script src="https://www.gstatic.com/charts/loader.js"></script>
+
+</head>
+
+<body>
+
+  <!-- NavBar Section  -->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light" style="background-color: #B9F8D3;"">
+    <a class="navbar-brand brand-logo"><img src="assets/images/logo1.ico" alt="icon-img" class="icon">
+      CF-Visualizer</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav navbar nav-custom ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">More</a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="#userDetails">Profile</a>
+            <a class="dropdown-item" href="#userAnalysis">Analysis</a>
+            <a class="dropdown-item" href="#userPractice">Practice</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#footer">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <div class="heading">
+      <img src="assets\images\logo2.png" alt="" class="my-logo">
+      <h1 class="my-name">CF Visualizer</h1>
+      <p class="desc">Want to Know your CF progress?</p>
+      <br>
+            <input type="text" id="cfId"  placeholder="Codeforces Handle*">
+        <br>
+
+
+
+            <button id="resultButton" type="button" class="btn btn-primary go">Go</button>
+
+  </div>
+
+
+  <!-- .................................................................................................................. -->
+
+  <div class="results">
+
+    <div id="userDetails">
+      <center><strong>
+          <p class="greetingsTitle"></p>
+        </strong>
+
+      </center>
+      
+      <h1 data-aos='fade-right' class="section-heading">Profile</h1>
+      <div id="userProfile" class="row">
+
+      </div>
+
+    </div>
+
+    <div id="userAnalysis" class="">
+      <br>
+      <h1 data-aos='fade-right' class="section-heading analysisHeading">Analysis</h1>
+
+
+      <div class="row ratingAndProblemChart">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <div id="userRatingChart" style="border: 2px solid black;background-color: white;">
+          </div>
+        </div>
+        <br>
+        <br>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <div id="userProblemChart" style="border: 2px solid black;background-color: white;">
+          </div>
+
+        </div>
+
+      </div>
+
+      <div id="myPieChart">
+
+      </div>
+
+      <div id="efficiencyChart">
+
+      </div>
+
+      <div class="row efficiencyTable" style="background-color:white;">
+        <div class="col-lg-6 col-md-12 col-xs-12 col-sm-12 strongTopics">
+          <br>
+          <center>
+            <h3>Strong Topics</h3>
+          </center>
+          <br>
+          <table id='strongTopicsTable' class="table table-bordered table-hover">
+            <thead>
+              <tr>
+                <th style="background:#66DE93;">Topics</th>
+                <th style="background:#66DE93;">Efficiency</th>
+              </tr>
+
+            </thead>
+            <tbody id='strongBody'>
+
+            </tbody>
+          </table>
+        </div>
+        <div class="col-lg-6 col-md-12 col-xs-12 col-sm-12 weakTopics">
+          <br>
+          <center>
+            <h3>Weak Topics</h3>
+          </center>
+          <br>
+          <table id='weakTopicsTable' class="table table-bordered table-hover">
+            <thead>
+              <tr>
+                <th style="background:#EBA83A;">Topics</th>
+                <th style="background:#EBA83A;">Efficiency</th>
+              </tr>
+
+            </thead>
+            <tbody id='weakBody'>
+
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- .................................................................................................................................. -->
+
+    <div id="userPractice" class="PracticeProblems">
+
+        <h1 data-aos='fade-right' class="section-heading practiceHeading">Practice</h1>
+       <div class="pG">
+      <div class="card-deck problemGenerator" style="margin: 0 5% 0 5%;">
+
+      <div class="card">
+      <div class="card-body">
+        <h2 class="card-title">Random Problem Generator</h2>
+        <p class="card-text">This will generate a question between user_rating-100 and user_rating+300 that is a random problem</p>
+
+            <button id="randomProblemButton" class="btn btn-lg btn-success getnotified" type="button" name="button">Get Problem!!</button>
+            <br>
+      </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title">Random Problem Generator</h2>
+            <p class="card-text">This will generate a question between user_rating-100 and user_rating+300 according to weak topics</p>
+
+
+            <button id="randomWeakProblemButton" class="btn btn-lg btn-success getnotified" type="button" name="button">Get Problem!!</button>
+            <br>
+        </div>
+  </div>
+
+</div>
+</div>
+
+
+
+
+      <div id="unsolvedProblemsContainer">
+        <div id="unsolvedProblems">
+
+        </div>
+      </div> 
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+    <div class="importantLinks">
+      <br>
+      <h1 data-aos='fade-right' class="section-heading practiceHeading">Important Links</h1>
+      <br>
+      <div class="row">
+        <div class="impLinks col-4">
+          <ul>
+            <li><a href="https://cp-algorithms.com/">Theories for Algorithms and DataStructures</a></li>
+            <li><a href="https://cses.fi/problemset/">CSES Problemset</a></li>
+            <li><a href="https://atcoder.jp/contests/dp/tasks">Atcoder dp</a></li>
+            <li><a href="https://www.youtube.com/channel/UCBr_Fu6q9iHYQCh13jmpbrg">Errichto's Videos</a></li>
+            <li><a href="https://codeforces.com/blog/entry/91363">List of Important Blogs</a></li>
+          </ul>
+        </div>
+        <div class="col-6">
+          <center>
+            <img src="assets\images\developer.png" class='developerPic' alt="">
+          </center>
+
+        </div>
+
+      </div>
+    </div>  
+  </div>
+
+<br><br>
+
+
+  </div>
+  
+  <!-- JavaScript Files -->
+  <script src="js\scriptIndex.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="js\animation.js"></script>
+
+</body>
+
+<footer id="footer">
+  <a href="https://github.com/ujjwal-011"><i class="fa fa-github foot-icon"></i></a>
+  <a href="https://www.linkedin.com/in/ujjwal-srivastava-8b8b02240/"><i class="fa fa-linkedin foot-icon"></i></a>
+  <a href="https://www.facebook.com/profile.php?id=100072092415508"><i class="fa fa-facebook foot-icon"></i></a>
+  <p class="copyright">© Copyright Ujjwal Srivastava 2022</p>
+</footer>
+
+</html>
